@@ -1,18 +1,54 @@
-// console.log('Hello world in Node.js');
 
-// import http from 'http';
+// var fs = require("fs");
+/* var data = fs.readFileSync('input.txt');
 
-var http = require('http');
-http.createServer(function (request,response) {
-    // Send the HTTP header
-    // HTTP Status: 200 : OK
-    // Content Type: text/plain
+console.log(data.toString());
+console.log("Program Ended"); */
 
-    response.writeHead(200, {'Conetnt-Type': 'text/plain'});
-    // Send the response body as "Hello World"
-    response.end('Hello World !\n');
+/* fs.readFile('input.txt', function (err, data) {
+    if (err) return console.error(err);
+    console.log(data.toString());
+ });
+ 
+ console.log("Program Ended"); */
 
-}).listen(8081);
+ var events = require('events');
 
-// Console will print the message
-console.log('Server running at http://127.0.0.1:8081');
+ var eventEmitter = new events.EventEmitter();
+
+ // listener1
+ var listener1 = () => {
+    console.log('listener1 executed.');
+ }
+
+ // listener2
+    var listener2 = () => {
+    console.log('listener2 executed.');
+    }
+
+    // Bind the connection event with the listener1 function
+    eventEmitter.addListener('connection', listener1);
+
+    // Bind the connection event with the listener2 function
+    eventEmitter.on('connection',listener2);
+
+    var eventListeners = eventEmitter.listenerCount(eventEmitter, 'connection');
+
+    console.log(eventListeners + ' Listener(s) listening to the connection event');
+
+    // Fire the connection event
+    eventEmitter.emit('connection');
+
+    // Remove the binding of listener1 function
+    eventEmitter.removeListener('connection', listener1);
+
+    console.log('Listener1 will not listen now.');
+
+    // Fire the connection event
+    eventEmitter.emit('connection');
+
+    console.log( __filename );
+
+    console.log( __dirname );
+
+    console.log('Program Ended');

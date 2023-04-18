@@ -1,0 +1,40 @@
+{
+    "user1" : {
+       "name" : "Mawamba",
+       "password" : "password1",
+       "profession" : "teacher",
+       "id": 1
+    },
+    
+    "user2" : {
+       "name" : "Momo",
+       "password" : "password2",
+       "profession" : "librarian",
+       "id": 2
+    },
+    
+    "user3" : {
+       "name" : "Fouelefack",
+       "password" : "password3",
+       "profession" : "clerk",
+       "id": 3
+    },
+    "user4" : {
+        "name" : "Mguefack",
+        "password" : "password4",
+        "profession" : "Informatician",
+        "id": 4
+     },
+     "user5" : {
+        "name" : "Kuaguim",
+        "password" : "password5",
+        "profession" : "Electronician",
+        "id": 5
+     },
+     "user6" : {
+        "name" : "Henry",
+        "password" : "password6",
+        "profession" : "footballer",
+        "id": 6
+     }
+ }
